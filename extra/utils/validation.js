@@ -1,15 +1,6 @@
-const users =["trainee1@successive.tech","reviewer1@successive.tech","arr@","rita@com"];
+import {validateEmail} from "./helper";
 
-validateUsers(users);
-function validateEmail(email){
-    var pattern = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;     
-    if(email.match(pattern))
-        return "true";
- else
-     return "false";
-}
-
-function validateUsers(users){
+export default function validateUsers(users){
     const valid=[];
     const invalid=[];
     var len= users.length;
