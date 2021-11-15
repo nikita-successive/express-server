@@ -59,6 +59,3 @@ else if(type == 'fullpyramid'){
     console.log(fullpyramid_pattern);
 }
 }
-
-
-
