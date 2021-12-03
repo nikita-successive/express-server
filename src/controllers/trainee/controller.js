@@ -1,15 +1,15 @@
 export class Trainee_Controller{
     //  constructor(){}
-    trainne_get_routes = function(req,res){
-        res.send('This is get respond call');
+    create = function(req,res){
+        res.send('This is Post respond call');
     }
-    trainee_put_routes = function (req,res) {
-        res.send('this is put routes');
+    get = function (req,res) {
+        res.send('this is get respond call');
     }
-    trainee_post_routes = function (req,res) {
-        res.send('this is post routes');
+    put = function (req,res) {
+        res.send('this is put respond call');
     }
-    trainee_delete_routes = function (req,res) {
-        res.send('this is delete routes');
+    delete = function (req,res) {
+        res.send('this is delete respond call');
     }
 }

@@ -4,7 +4,9 @@ import  mainRoutes    from  './router';
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
+
 const app = express();
+app.use(express.json());
  class Server{
     constructor(config){
         app.listen(config);
