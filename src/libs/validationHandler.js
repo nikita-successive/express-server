@@ -1,3 +1,5 @@
+import express from "express";
+
 const validationHandler = (config) => (req, res, next) =>{
      const errMessage = [];
      let flag = false;
@@ -11,7 +13,7 @@ const validationHandler = (config) => (req, res, next) =>{
 
                 case 'required':
                     if(key=='skip'){
-                        if(req[dataPlace].skip!=undefined){
+                        if(req[dataPlace].skip!='undefined'){
                             let regex= /^[0-9]+$/.test(req[dataPlace].skip);
                                 if(regex==true){
                                     console.log(req[dataPlace].skip);
@@ -30,7 +32,7 @@ const validationHandler = (config) => (req, res, next) =>{
                         
                     }
                     else if(key == 'limit'){
-                        if(req[dataPlace].limit!=undefined){
+                        if(req[dataPlace].limit!='undefined'){
                             let regex= /^[0-9]+$/.test(req[dataPlace].limit);
                                 if(regex==true){
                                     console.log(req[dataPlace].limit);
@@ -46,8 +48,9 @@ const validationHandler = (config) => (req, res, next) =>{
                             req[dataPlace].limit=10;
                             console.log(req[dataPlace].limit);
                         }
-                    }      
-                                
+                    }  
+                
+                   
                 else{     
                             
                     if ((key in req[dataPlace]) && input !== null) {
@@ -75,14 +78,34 @@ const validationHandler = (config) => (req, res, next) =>{
                     
                 }
                 case 'regex':
+                    if(typeof input!= 'undefined'){
+                        if(key=='email'){
+                        let regex=/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/.test(input)
+                        if(regex==true){
+                        break;
+                        }
+                        else{
+                            errMessage.push(`${key} is not in proper format`);
+                            flag = true;
+                            break;
+
+                        }
+                    }
+                    }
+                    
+                    else{
                     let pattern = /^[a-zA-Z]+$/.test(input);
-                    if(pattern==true)
-                    break;
+                        if(pattern == true){
+                            break;
+                        }
+                    
                     else {
                         errMessage.push(`${key} is not appropriate`);
                         flag = true;
                         break;
                     }
+                }
+                    
                     case 'custom':
                         if(input!== ""){
                             break;

@@ -13,3 +13,4 @@ export class Trainee_Controller{
         res.send('this is delete respond call');
     }
 }
+

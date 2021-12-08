@@ -10,8 +10,5 @@ routes.route('/')
 .put(validationHandler(validation.update),trainee.put)
 routes.route('/:id')
 .delete(validationHandler(validation.delete),trainee.delete)
-// put.trainee_post_routes);
-// routes.put('/',trainee.trainee_put_routes);
-// routes.delete('/',trainee.trainee_delete_routes);
-
 export default routes;
+
