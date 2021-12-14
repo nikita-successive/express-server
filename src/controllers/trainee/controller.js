@@ -12,5 +12,6 @@ export class Trainee_Controller{
     delete = function (req,res) {
         res.send('this is delete respond call');
     }
+    
 }
 
