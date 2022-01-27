@@ -7,4 +7,3 @@ const user = new UserController();
 routes.route('/')
 .post(validationHandler(user_Validation.login),user.login)
 export default routes;
-

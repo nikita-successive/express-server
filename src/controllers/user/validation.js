@@ -15,5 +15,3 @@ password:{
     }
 }
 export default user_Validation;
-
-

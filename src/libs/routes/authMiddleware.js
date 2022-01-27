@@ -7,7 +7,3 @@ else{
     res.json({message:"unauthorized"});
 }
 }
-
-
-
-

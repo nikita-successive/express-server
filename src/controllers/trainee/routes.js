@@ -11,4 +11,3 @@ routes.route('/')
 routes.route('/:id')
 .delete(validationHandler(validation.delete),trainee.delete)
 export default routes;
-

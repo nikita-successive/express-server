@@ -29,3 +29,4 @@ export const seed = async (req,res,next) => {
         console.log('error is created', error);
       }
   };
+  

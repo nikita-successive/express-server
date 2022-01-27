@@ -1,2 +1,1 @@
 export { Configuration } from './configuration';
-
